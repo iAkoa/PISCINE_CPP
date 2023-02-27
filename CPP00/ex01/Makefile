@@ -22,15 +22,16 @@ OBJS		=	$(SRCS:.cpp=.o)
 
 all:		$(NAME)
 
-$(NAME):		$(OBJS)
+
+$(NAME):	$(OBJS)
 			$(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)
 
 clean:
-			rm -f $(SRCS)
+			rm -f $(OBJS)
 
-fclean:
+fclean:		clean
 			$(RM) $(NAME)
 
 re:			fclean all
 
-.PHONY:		fclean, all, re
+.PHONY:		fclean, all, re, clean, $(NAME)

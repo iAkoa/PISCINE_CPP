@@ -24,9 +24,9 @@ $(NAME):		$(OBJS)
 			$(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)
 
 clean:
-			rm -f $(SRCS)
+			rm -f $(OBJS)
 
-fclean:
+fclean:		clean
 			$(RM) $(NAME)
 
 re:			fclean all

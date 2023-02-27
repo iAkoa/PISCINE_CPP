@@ -71,7 +71,7 @@ void searchContact(Phonebook *phonebook)
 		int index;
 		std::string command;
 		std::cout << "Please enter an index for relevant information: ";
-		// while (std::getline(std::cin, command))
+		while (std::getline(std::cin, command))
 		{
 			try
 			{

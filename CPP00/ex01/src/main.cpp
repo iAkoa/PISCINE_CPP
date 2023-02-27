@@ -6,7 +6,7 @@
 /*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 01:34:13 by pat               #+#    #+#             */
-/*   Updated: 2023/02/21 23:16:53 by pat              ###   ########lyon.fr   */
+/*   Updated: 2023/02/26 01:55:09 by pat              ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ std::string truncate(std::string str)
 
 void searchContact(Phonebook *phonebook)
 {
-	int index;
 	int count;
 
 	count = phonebook->getCount();
@@ -69,12 +68,23 @@ void searchContact(Phonebook *phonebook)
 	std::cout << "└──────────┴──────────┴──────────┴──────────┘" << std::endl;
 	if (count > 0)
 	{
+		int index;
+		std::string command;
 		std::cout << "Please enter an index for relevant information: ";
-		while (!(std::cin >> index) || index > count || index < 1)
+		// while (std::getline(std::cin, command))
 		{
-			std::cin.clear();
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-			std::cout << "Invalid input. Please enter an index between 1 and " << count << ": ";
+			try
+			{
+				index = std::stoi(command);
+			}
+			catch(std::exception &err)
+			{
+				std::cout << "Invalid input. Please enter an index between 1 and " << count << ": ";
+			}
+			if (index <= count && index > 0)
+				break;
+			if (index != 0)
+				std::cout << "Invalid input. Please enter an index between 1 and " << count << ": ";
 		}
 		index--;
 		Contact tmp;
@@ -96,23 +106,23 @@ void searchContact(Phonebook *phonebook)
 int main()
 {
 	Phonebook phonebook;
+	std::string command;
 
 	std::cout << "Command info: " << std::endl;
 	std::cout << " -ADD: add a contact to the phonebook" << std::endl;
 	std::cout << " -SEARCH: search for a contact in the phonebook" << std::endl;
-	std::cout << " -EXIT: quit the program" << std::endl;
-	while (1)
+	std::cout << " -EXIT: quit the program" << "\n\n\n";
+	std::cout << "Enter a command: ";
+	while (std::getline(std::cin, command))
 	{
-		std::string command;
-		std::cout << std::endl << "Enter a command: ";
-		std::getline(std::cin, command);
+		if (std::cin.eof())
+			exit(0);
 		if (command == "ADD")
 			addContact(&phonebook);
 		else if (command == "SEARCH")
 			searchContact(&phonebook);
 		else if (command == "EXIT")
-		{
-			break;
-		}
+			exit(0);
+		std::cout << std::endl << "Enter a command: ";
 	}
 }

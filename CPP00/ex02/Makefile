@@ -19,6 +19,9 @@ INCLUDES	=	include
 CPPFLAGS	=	-Wall -Werror -Wextra -I$(INCLUDES)
 RM			=	rm -rf
 OBJS		=	$(SRCS:.cpp=.o)
+LOGS		=	contrefacon.log 	\
+				true_log 			\
+				contrefacon_log
 
 all:		$(NAME)
 
@@ -29,8 +32,20 @@ clean:
 			rm -f $(OBJS)
 
 fclean:		clean
+			$(RM) $(OBJS)
 			$(RM) $(NAME)
+			$(RM) $(LOGS)
+			$(RM) diff
+
+
+run : $(NAME)
+		@./Dreamjob > contrefacon.log
+
+diff:	run
+		bash diff.sh
+		$(RM) $(LOGS)
+
 
 re:			fclean all
 
-.PHONY:		fclean, all, re
+.PHONY:		fclean, all, re, diff

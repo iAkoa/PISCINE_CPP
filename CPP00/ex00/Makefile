@@ -14,7 +14,7 @@ NAME		=	megaphone
 SRCS		=	megaphone.cpp
 CC			=	clang++
 INCLUDES	=	includes
-CPPFLAGS	=	-Wall -Werror -Wextra -I$(INCLUDES)
+CPPFLAGS	=	-Wall -Werror -Wextra -std=c++98 -I$(INCLUDES)
 RM			=	rm -rf
 OBJS		=	$(SRCS:.cpp=.o)
 

@@ -3,49 +3,38 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+         #
+#    By: mycomputer <mycomputer@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 01:33:31 by pat               #+#    #+#              #
-#    Updated: 2023/02/27 01:23:39 by pat              ###   ########lyon.fr    #
+#    Updated: 2023/03/01 04:19:01 by mycomputer       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	Dreamjob
-SRCS		=	src/test.cpp	\
-				src/Account.cpp
+NAME		=	Zombie
+SRCS		=	src/main.cpp		\
+				src/newZombie.cpp	\
+				src/randomChump.cpp	\
+				src/zombie.cpp
+				
 
 CC			=	clang++
 INCLUDES	=	include
 CPPFLAGS	=	-Wall -Werror -Wextra -std=c++98 -I$(INCLUDES)
 RM			=	rm -rf
 OBJS		=	$(SRCS:.cpp=.o)
-LOGS		=	contrefacon.log 	\
-				true_log 			\
-				contrefacon_log
 
 all:		$(NAME)
 
-$(NAME):		$(OBJS)
+
+$(NAME):	$(OBJS)
 			$(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)
 
 clean:
-			rm -f $(OBJS)
+			$(RM) $(OBJS)
 
 fclean:		clean
-			$(RM) $(OBJS)
 			$(RM) $(NAME)
-			$(RM) $(LOGS)
-			$(RM) diff
-
-
-run : $(NAME)
-		@./Dreamjob > contrefacon.log
-
-diff:	run
-		bash diff.sh
-		$(RM) $(LOGS)
-
 
 re:			fclean all
 
-.PHONY:		fclean, all, re, diff
+.PHONY:		fclean, all, re, clean, $(NAME)

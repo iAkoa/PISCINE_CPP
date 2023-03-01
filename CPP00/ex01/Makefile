@@ -16,7 +16,7 @@ SRCS		=	src/main.cpp	\
 				src/phonebook.cpp
 CC			=	clang++
 INCLUDES	=	include
-CPPFLAGS	=	-Wall -Werror -Wextra -I$(INCLUDES)
+CPPFLAGS	=	-Wall -Werror -Wextra -std=c++98 -I$(INCLUDES)
 RM			=	rm -rf
 OBJS		=	$(SRCS:.cpp=.o)
 

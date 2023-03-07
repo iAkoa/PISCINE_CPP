@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+         #
+#    By: mycomputer <mycomputer@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 01:33:31 by pat               #+#    #+#              #
-#    Updated: 2023/02/21 21:44:42 by pat              ###   ########lyon.fr    #
+#    Updated: 2023/03/07 18:46:34 by mycomputer       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS		=	src/main.cpp	\
 				src/phonebook.cpp
 CC			=	clang++
 INCLUDES	=	include
-CPPFLAGS	=	-Wall -Werror -Wextra -std=c++98 -I$(INCLUDES)
+CPPFLAGS	=	-Wall -Werror -Wextra -std=c++98 -pedantic -I$(INCLUDES)
 RM			=	rm -rf
 OBJS		=	$(SRCS:.cpp=.o)
 

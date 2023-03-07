@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+        */
+/*   By: mycomputer <mycomputer@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 01:34:13 by pat               #+#    #+#             */
-/*   Updated: 2023/02/26 01:55:09 by pat              ###   ########lyon.fr   */
+/*   Updated: 2023/03/07 18:45:57 by mycomputer       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void addContact(Phonebook *phonebook)
 
 std::string truncate(std::string str)
 {
-	if (str.size() >= 10)
+	if (str.size() > 10)
 		return (str.substr(0, 9) + ".");
 	return (str);
 }
@@ -76,31 +76,30 @@ void searchContact(Phonebook *phonebook)
 			try
 			{
 				index = std::stoi(command);
+				if (index <= count && index > 0)
+					break;
+				else
+					std::cout << "Invalid input. Please enter an index between 1 and " << count << ": ";
 			}
 			catch(std::exception &err)
 			{
 				std::cout << "Invalid input. Please enter an index between 1 and " << count << ": ";
 			}
-			if (index <= count && index > 0)
-				break;
-			if (index != 0)
-				std::cout << "Invalid input. Please enter an index between 1 and " << count << ": ";
 		}
 		index--;
 		Contact tmp;
 		tmp = phonebook->getContact(index);
 		std::cout << std::endl;
-		std::cout << "First name - " << tmp.getFirstName() << std::endl;
-		std::cout << "Last name - " << tmp.getLastName() << std::endl;
-		std::cout << "Nickname - " << tmp.getNickName() << std::endl;
-		std::cout << "Phone number - " << tmp.getPhoneNumber() << std::endl;
-		std::cout << "Darkest secret - " << tmp.getSecret() << std::endl;
+		std::cout << "First name: " << tmp.getFirstName() << std::endl;
+		std::cout << "Last name: " << tmp.getLastName() << std::endl;
+		std::cout << "Nickname: " << tmp.getNickName() << std::endl;
+		std::cout << "Phone number: " << tmp.getPhoneNumber() << std::endl;
+		std::cout << "Darkest secret: " << tmp.getSecret() << std::endl;
 	}
 	else
 	{
 		std::cout << "Table is empty!" << std::endl;
 	}
-	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
 int main()

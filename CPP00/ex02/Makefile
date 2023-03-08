@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pat <pat@student.42lyon.fr>                +#+  +:+       +#+         #
+#    By: rmattheo <rmattheo@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 01:33:31 by pat               #+#    #+#              #
-#    Updated: 2023/02/27 01:23:39 by pat              ###   ########lyon.fr    #
+#    Updated: 2023/03/08 10:12:40 by rmattheo         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	Dreamjob
 SRCS		=	src/test.cpp	\
-				src/Account.cpp
+				src/account.cpp
 
 CC			=	clang++
 INCLUDES	=	include

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mycomputer <mycomputer@student.42.fr>      +#+  +:+       +#+        */
+/*   By: rmattheo <rmattheo@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 01:34:13 by pat               #+#    #+#             */
-/*   Updated: 2023/03/07 18:45:57 by mycomputer       ###   ########.fr       */
+/*   Updated: 2023/03/08 10:10:46 by rmattheo         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include <iostream>
 #include <iomanip>
 #include <limits>
+#include <unistd.h>
+#include <stdlib.h>
 
 void addContact(Phonebook *phonebook)
 {
@@ -75,7 +77,7 @@ void searchContact(Phonebook *phonebook)
 		{
 			try
 			{
-				index = std::stoi(command);
+				index = std::atoi(command.c_str());
 				if (index <= count && index > 0)
 					break;
 				else
@@ -115,13 +117,13 @@ int main()
 	while (std::getline(std::cin, command))
 	{
 		if (std::cin.eof())
-			exit(0);
+			_exit(0);
 		if (command == "ADD")
 			addContact(&phonebook);
 		else if (command == "SEARCH")
 			searchContact(&phonebook);
 		else if (command == "EXIT")
-			exit(0);
+			_exit(0);
 		std::cout << std::endl << "Enter a command: ";
 	}
 }

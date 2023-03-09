@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   account.cpp                                        :+:      :+:    :+:   */
+/*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmattheo <rmattheo@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 03:42:56 by pat               #+#    #+#             */
-/*   Updated: 2023/03/08 10:12:20 by rmattheo         ###   ########lyon.fr   */
+/*   Updated: 2023/03/09 14:07:33 by rmattheo         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,7 @@ int	Account::_totalNbDeposits = 0;
 int	Account::_totalNbWithdrawals = 0;
 
 /*PUBLIC*/
-Account::Account(int initial_deposit):	_accountIndex(_nbAccounts),
-											_amount(initial_deposit),
-												_nbDeposits(0),
-													_nbWithdrawals(0)
+Account::Account(int initial_deposit):	_accountIndex(_nbAccounts), _amount(initial_deposit), _nbDeposits(0), _nbWithdrawals(0)
 {
 	Account::_nbAccounts++;
 	Account::_totalAmount += this->_amount;

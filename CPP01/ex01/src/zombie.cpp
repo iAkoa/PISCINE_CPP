@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombie.hpp                                         :+:      :+:    :+:   */
+/*   zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mycomputer <mycomputer@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/28 19:31:47 by mycomputer        #+#    #+#             */
-/*   Updated: 2023/03/02 00:40:00 by mycomputer       ###   ########.fr       */
+/*   Created: 2023/02/28 19:37:03 by mycomputer        #+#    #+#             */
+/*   Updated: 2023/03/02 00:40:36 by mycomputer       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-# define ZOMBIE_H
+#include "../include/zombie.hpp"
 
 
-#include <string>
-#include <iostream>
-
-class Zombie
+void Zombie::announce(void)
 {
-	public:
-		Zombie();
-		Zombie(std::string name);
-		~Zombie();
-        
-		void announce(void);
-	private:
-		std::string _name;
-};
+    std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
 
-Zombie*	newZombie( std::string name );
-void	randomChump( std::string name );
+Zombie::Zombie(std::string name) : _name(name)
+{
+    return;
+}
 
-#endif
+Zombie::Zombie(void)
+{
+    return;
+}
+
+Zombie::~Zombie( void )
+{
+	std::cout << "Zombie instance '" << this->_name << "' destroyed." << std::endl;
+}
+
+void Zombie::setname(std::string str)
+{
+	this->_name = str;
+}

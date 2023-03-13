@@ -6,11 +6,11 @@
 /*   By: mycomputer <mycomputer@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 00:39:56 by mycomputer        #+#    #+#             */
-/*   Updated: 2023/03/02 00:40:48 by mycomputer       ###   ########.fr       */
+/*   Updated: 2023/03/10 10:00:21 by mycomputer       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/zombie.hpp"
+#include "../include/Zombie.hpp"
 
 void	randomChump( std::string name )
 {

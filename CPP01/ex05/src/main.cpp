@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mycomputer <mycomputer@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/02 02:25:40 by mycomputer        #+#    #+#             */
-/*   Updated: 2023/03/11 10:26:59 by mycomputer       ###   ########.fr       */
+/*   Created: 2023/03/12 17:17:14 by mycomputer        #+#    #+#             */
+/*   Updated: 2023/03/12 17:53:20 by mycomputer       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
-#include <iostream>
+#include "Harl.hpp"
 
-HumanA::HumanA(std::string name,  Weapon& weapon)  : _name(name), _weapon(&weapon)
+int main()
 {
-    return ;
-}
+	std::string input;
+    Harl        harl;
 
-HumanA::~HumanA(void)
-{
-    return;
-}
+    do
+    {
+        std::cout << "Enter a level: ";
+        std::cin >> input;
+        harl.complain(input);
+    }while (input.compare("exit"));
 
-void HumanA::attack()
-{
-    std::cout   << this->_name
-                << " attacks with their "
-                << this->_weapon->getType()
-                << std::endl;
+    return 0;
 }

@@ -6,11 +6,11 @@
 /*   By: mycomputer <mycomputer@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 19:37:03 by mycomputer        #+#    #+#             */
-/*   Updated: 2023/03/01 04:20:43 by mycomputer       ###   ########.fr       */
+/*   Updated: 2023/03/10 09:51:52 by mycomputer       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "zombie.hpp"
+#include "Zombie.hpp"
 
 
 void Zombie::announce(void)

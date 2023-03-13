@@ -6,11 +6,11 @@
 #    By: mycomputer <mycomputer@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 01:33:31 by pat               #+#    #+#              #
-#    Updated: 2023/03/10 09:45:49 by mycomputer       ###   ########.fr        #
+#    Updated: 2023/03/12 18:02:14 by mycomputer       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	Zombie
+NAME		=	Fixed
 
 CC			=	c++
 
@@ -20,10 +20,8 @@ CPPFLAGS	=	-Wall -Werror -Wextra -std=c++98 -I$(INCLUDES)
 
 RM			=	rm -rf
 
-SRCS		=	src/Zombie.cpp \
-				src/newZombie.cpp \
-				src/randomChump.cpp \
-				src/main.cpp
+SRCS		=	src/main.cpp	\
+				src/Fixed.cpp
 
 OBJS		=	$(SRCS:%.cpp=%.o)
 
